@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683734381200",
+    "project_id": "mazaolink-4714f",
+    "storage_bucket": "mazaolink-4714f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683734381200:android:64851d0af5cb3a007c1e15",
+        "android_client_info": {
+          "package_name": "com.devscentre.mazao_link"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683734381200-1o36uhvmml1jik70e1rc2vtcvfd7pqdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmC40DecltJWAqWh3-Mw-1_7qqxhX0DOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683734381200-1o36uhvmml1jik70e1rc2vtcvfd7pqdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
