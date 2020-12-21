@@ -1,9 +1,13 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/ui/home/home.dart';
 import 'package:mazao_link/ui/shared/loading.dart';
+
 class LoginPage extends StatefulWidget {
+  final Function toggleView;
+  LoginPage({this.toggleView});
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -14,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final password_controller = TextEditingController();
   bool loading = false;
   final AuthService _auth = AuthService();
+  String error = '';
   @override
   Widget build(BuildContext context) {
 
@@ -136,19 +141,49 @@ class _LoginPageState extends State<LoginPage> {
                                 setState(() {
                                  loading= true;
                                 });
-                                dynamic result = await _auth.signInAnon();
+                                dynamic result = await _auth.signInWithEmailAndPass(username_controller.text, password_controller.text);
 
                                 if(result== null){
+                                  setState((){
+                                    loading = false;
+                                    AwesomeDialog(
+                                        context: context,
+                                        dialogType: DialogType.ERROR,
+                                        animType: AnimType.RIGHSLIDE,
+                                        headerAnimationLoop: false,
+                                        title: 'Error',
+                                        desc:
+                                        'Wrong Credentials,Try Again!!',
+                                        btnOkOnPress: () {},
+                                        btnOkIcon: Icons.cancel,
+                                        btnOkColor: Colors.red)
+                                      ..show();
+                                  });
+                                }else{
+                                  setState(() {
+                                    loading = false;
+                                    AwesomeDialog(
+                                        context: context,
+                                        animType: AnimType.LEFTSLIDE,
+                                        headerAnimationLoop: false,
+                                        dialogType: DialogType.SUCCES,
+                                        title: 'Success',
+                                        desc:
+                                        'Login Successful',
+                                        btnOkOnPress: () {
+                                          debugPrint('OnClick');
+                                        },
+                                        btnOkIcon: Icons.check_circle,
+                                        onDissmissCallback: () {
+                                          debugPrint('Dialog Dissmiss from callback');
+                                        })..show();
 
-                                }
-                                setState(() {
-                                  loading= true;
-                                });
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => HomePage(),
-                                    ));
+                                  });}
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //       builder: (context) => HomePage(),
+                                //     ));
 
                               }
                             },
@@ -162,11 +197,20 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
+
                         SizedBox(height: 20.0,),
                         Padding( padding: const EdgeInsets.only(
                           left: 60.0,
                           right: 60.0,),
                           child: _SignInBtn(),
+                        ),
+                        SizedBox(height: 10.0,),
+                        Padding(padding: const EdgeInsets.only(left: 20.0, top: 20.0, right: 20.0),
+                        child: MaterialButton(
+                            onPressed:(){
+                              widget.toggleView();
+                            },
+                        child: Text("Register"),),
                         ),
                       ],
                   ),
