@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mazao_link/models/user.dart';
+import 'package:mazao_link/services/auth.dart';
+import 'package:mazao_link/ui/shared/loading.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -8,9 +11,12 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final username_controller = TextEditingController();
   final password_controller = TextEditingController();
+  bool loading = false;
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+    return   loading ? Loading() :Scaffold(
       body: Container(
       color: Colors.white,
         child: Center(
@@ -126,6 +132,13 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             onPressed: () async {
                               if(_formKey.currentState.validate()){
+                                setState(() {
+                                 loading= true;
+                                });
+                                dynamic result = await _auth.signInAnon();
+                                print("result");
+                                CurrentUser us= CurrentUser();
+                                print(us.uid);
 
                               }
                             },
