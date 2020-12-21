@@ -271,9 +271,8 @@ class _RegisterState extends State<Register> {
                                           dynamic result = await _auth
                                               .registerWithEmailAndPass(
                                                   email, password);
-                                          if (result == null) {
+                                          if (result ==null) {
                                             setState(() {
-                                              error = 'please supply a valid email';
                                               loading = false;
 
                                               AwesomeDialog(
