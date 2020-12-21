@@ -3,7 +3,9 @@ import 'package:mazao_link/models/user.dart';
 
 
 class AuthService{
+
   FirebaseAuth  _auth = FirebaseAuth.instance;
+
   //create user obj based on FirebaseUser
   CurrentUser _userFromFirebaseUser(User user){
     return user != null ? CurrentUser(uid: user.uid) :null;
