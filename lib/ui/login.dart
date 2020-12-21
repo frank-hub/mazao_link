@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
+import 'package:mazao_link/ui/home/home.dart';
 import 'package:mazao_link/ui/shared/loading.dart';
 class LoginPage extends StatefulWidget {
   @override
@@ -136,9 +137,18 @@ class _LoginPageState extends State<LoginPage> {
                                  loading= true;
                                 });
                                 dynamic result = await _auth.signInAnon();
-                                print("result");
-                                CurrentUser us= CurrentUser();
-                                print(us.uid);
+
+                                if(result== null){
+
+                                }
+                                setState(() {
+                                  loading= true;
+                                });
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomePage(),
+                                    ));
 
                               }
                             },
