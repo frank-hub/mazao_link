@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mazao_link/models/user.dart';
+import 'package:mazao_link/services/database.dart';
 
 
 class AuthService{
@@ -19,6 +20,7 @@ class AuthService{
       UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email, password:password );
       User user =userCredential.user;
+
       return _userFromFirebaseUser(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -29,13 +31,13 @@ class AuthService{
     }
   }
   //register with Email $ password
-  Future registerWithEmailAndPass(String email, String password) async {
+  Future registerWithEmailAndPass(String name,String email, String password) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email, password: password );
       User user = userCredential.user;
 //create doc for the user with uid
-// await DatabaseService(uid: user.uid).updateUserData('username', 071000000, 'Male','Kericho', '1797','Kapsuser');
+      await DatabaseService(uid: user.uid).updateUserData(name, email ,0, 'gender', 'county', 'address', 'location');
       return _userFromFirebaseUser(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

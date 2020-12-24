@@ -15,8 +15,8 @@ class HomePage  extends StatelessWidget {
     backgroundColor: Colors.blue,
     elevation: 0.0,
     actions: <Widget>[
-    FlatButton.icon(
-    icon: Icon(Icons.person),
+          FlatButton.icon(
+            icon: Icon(Icons.person),
     onPressed: () async {
     await _auth.signOut();
     },

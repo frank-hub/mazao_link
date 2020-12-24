@@ -23,10 +23,29 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
 
     return   loading ? Loading() :Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        elevation: 0.0,
+        title: Text("Mazao Link "),
+        actions: <Widget>[
+          FlatButton.icon(
+            label: Text(
+              "Register",
+              style: TextStyle(color: Colors.white),
+            ),
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              widget.toggleView();
+            },
+          )
+        ],
+      ),
       body: Container(
       color: Colors.white,
         child: Center(
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
@@ -189,7 +208,7 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             color: Colors.green[600],
                             child: new Text(
-                              'Login',
+                              'Sign In',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20.0,
@@ -210,7 +229,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed:(){
                               widget.toggleView();
                             },
-                        child: Text("Register"),),
+                        child: Text("Sign Up"),),
                         ),
                       ],
                   ),
