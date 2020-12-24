@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mazao_link/ui/authenticate/authenticate.dart';
 import 'package:mazao_link/ui/authenticate/login.dart';
+import 'package:mazao_link/ui/test.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,7 @@ class HomeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Authenticate(),
+      home: Test(),
     );
   }
 }
