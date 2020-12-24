@@ -1,7 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mazao_link/services/auth.dart';
+import 'package:mazao_link/ui/shared/loading.dart';
 
 class Authenticate extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _AuthenticateState extends State<Authenticate> {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return   loading ? Loading() :Scaffold(
 
       body: SingleChildScrollView(
         child: Column(
