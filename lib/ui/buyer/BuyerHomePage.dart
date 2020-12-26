@@ -24,10 +24,10 @@ class _BuyerHomeState extends State<BuyerHome> {
             icon: new Icon(Icons.shopping_cart),
             title: new Text('Cart'),
           ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.library_books),
-            title: new Text('Orders'),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: new Icon(Icons.library_books),
+          //   title: new Text('Orders'),
+          // ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               title: Text('Profile'),
