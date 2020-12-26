@@ -2,7 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
-import 'package:mazao_link/ui/home/home.dart';
+
 import 'package:mazao_link/ui/shared/loading.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,26 +23,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
 
     return   loading ? Loading() :Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        elevation: 0.0,
-        title: Text("Mazao Link "),
-        actions: <Widget>[
-          FlatButton.icon(
-            label: Text(
-              "Register",
-              style: TextStyle(color: Colors.white),
-            ),
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              widget.toggleView();
-            },
-          )
-        ],
-      ),
       body: Container(
       color: Colors.white,
         child: Center(
