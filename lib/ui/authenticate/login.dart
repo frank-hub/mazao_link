@@ -2,6 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
+import 'package:mazao_link/ui/buyer/BuyerHomePage.dart';
 
 import 'package:mazao_link/ui/shared/loading.dart';
 
@@ -172,6 +173,10 @@ class _LoginPageState extends State<LoginPage> {
                                       'Login Successful',
                                       btnOkOnPress: () {
                                         debugPrint('OnClick');
+                                        Navigator.push(context,
+                                        MaterialPageRoute(builder:
+                                        (context)=>BuyerHome()
+                                        ));
                                       },
                                       btnOkIcon: Icons.check_circle,
                                       onDissmissCallback: () {
