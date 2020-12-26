@@ -1,17 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mazao_link/services/auth.dart';
+import 'package:mazao_link/ui/buyer/BuyerHomePage.dart';
 import 'package:mazao_link/ui/shared/loading.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
-  Register({this.toggleView});
+  // Register({this.toggleView});
+  Register({Key key, this.toggleView}) : super(key: key);
+
   @override
   _RegisterState createState() => _RegisterState();
 }
-
+enum SingingCharacter { Buyer, Seller }
 class _RegisterState extends State<Register> {
+  SingingCharacter _character = SingingCharacter.Buyer;
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
@@ -84,7 +88,7 @@ class _RegisterState extends State<Register> {
                             ),
                             new Padding(padding: const EdgeInsets.all(10.0)),
                             new Container(
-                              height: 460.0,
+                              height: 480.0,
                               width: 450.0,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
@@ -144,6 +148,48 @@ class _RegisterState extends State<Register> {
                                           )),
                                     ),
                                   ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(14,5,0,0),
+                                    child: Text(
+                                      "Mazao Role :",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+
+                                      Flexible(
+                                        child: ListTile(
+                                          title: const Text('Buyer'),
+                                          leading: Radio(
+                                            value: SingingCharacter.Buyer,
+                                            groupValue: _character,
+                                            onChanged: (SingingCharacter value) {
+                                              setState(() {
+                                                _character = value;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                     Flexible(
+                                       child:  ListTile(
+                                         title: const Text('Seller'),
+                                         leading: Radio(
+                                           value: SingingCharacter.Seller,
+                                           groupValue: _character,
+                                           onChanged: (SingingCharacter value) {
+                                             setState(() {
+                                               _character = value;
+                                             });
+                                           },
+                                         ),
+                                       ),
+                                     )
+                                    ],
+                                  ),
                                   new SizedBox(
                                     height: 15.0,
                                   ),
@@ -192,9 +238,11 @@ class _RegisterState extends State<Register> {
                                       ),
                                     ),
                                   ),
+
                                   SizedBox(
                                     height: 20.0,
                                   ),
+
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: TextFormField(
@@ -302,6 +350,9 @@ class _RegisterState extends State<Register> {
                                                   'Register Successful',
                                                   btnOkOnPress: () {
                                                     debugPrint('OnClcik');
+                                                    Navigator.push(context, MaterialPageRoute(
+                                                      builder: (context)=>BuyerHome()
+                                                    ));
                                                   },
                                                   btnOkIcon: Icons.check_circle,
                                                   onDissmissCallback: () {

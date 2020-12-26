@@ -15,7 +15,8 @@ class UserData {
   String gender;
   int phone;
   String address;
-
+  bool buyer;
+  bool seller;
   UserData(
       {this.uid,
         this.location,
@@ -24,5 +25,8 @@ class UserData {
         this.address,
         this.county,
         this.phone,
-        this.gender});
+        this.gender,
+        this.buyer,
+        this.seller
+      });
 }

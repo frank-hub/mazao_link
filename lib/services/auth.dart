@@ -37,7 +37,7 @@ class AuthService{
           email: email, password: password );
       User user = userCredential.user;
 //create doc for the user with uid
-      await DatabaseService(uid: user.uid).updateUserData("",email ,0, 'gender', 'county', 'address', 'location');
+      await DatabaseService(uid: user.uid).updateUserData('frank',email ,0, 'gender', 'county', 'address', 'location',true,false);
       return _userFromFirebaseUser(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

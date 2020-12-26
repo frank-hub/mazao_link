@@ -7,6 +7,10 @@ class BuyerHome extends StatefulWidget {
 class _BuyerHomeState extends State<BuyerHome> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        child: Text('Home'),
+      ),
+    );
   }
 }

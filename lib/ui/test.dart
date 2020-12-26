@@ -165,55 +165,55 @@ class Test extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(18.0),
                                     ),
                                     onPressed: () async {
-                                      // if(_formKey.currentState.validate()){
-                                      //   setState(() {
-                                      //     loading= true;
-                                      //   });
-                                      //   dynamic result = await _auth.signInWithEmailAndPass(username_controller.text, password_controller.text);
-                                      //
-                                      //   if(result== null){
-                                      //     setState((){
-                                      //       loading = false;
-                                      //       AwesomeDialog(
-                                      //           context: context,
-                                      //           dialogType: DialogType.ERROR,
-                                      //           animType: AnimType.RIGHSLIDE,
-                                      //           headerAnimationLoop: false,
-                                      //           title: 'Error',
-                                      //           desc:
-                                      //           'Wrong Credentials,Try Again!!',
-                                      //           btnOkOnPress: () {},
-                                      //           btnOkIcon: Icons.cancel,
-                                      //           btnOkColor: Colors.red)
-                                      //         ..show();
-                                      //     });
-                                      //   }else{
-                                      //     setState(() {
-                                      //       loading = false;
-                                      //       AwesomeDialog(
-                                      //           context: context,
-                                      //           animType: AnimType.LEFTSLIDE,
-                                      //           headerAnimationLoop: false,
-                                      //           dialogType: DialogType.SUCCES,
-                                      //           title: 'Success',
-                                      //           desc:
-                                      //           'Login Successful',
-                                      //           btnOkOnPress: () {
-                                      //             debugPrint('OnClick');
-                                      //           },
-                                      //           btnOkIcon: Icons.check_circle,
-                                      //           onDissmissCallback: () {
-                                      //             debugPrint('Dialog Dissmiss from callback');
-                                      //           })..show();
-                                      //
-                                      //     });}
-                                      //   // Navigator.push(
-                                      //   //     context,
-                                      //   //     MaterialPageRoute(
-                                      //   //       builder: (context) => HomePage(),
-                                      //   //     ));
-                                      //
-                                      // }
+                                      if(_formKey.currentState.validate()){
+                                        setState(() {
+                                          loading= true;
+                                        });
+                                        dynamic result = await _auth.signInWithEmailAndPass(username_controller.text, password_controller.text);
+
+                                        if(result== null){
+                                          setState((){
+                                            loading = false;
+                                            AwesomeDialog(
+                                                context: context,
+                                                dialogType: DialogType.ERROR,
+                                                animType: AnimType.RIGHSLIDE,
+                                                headerAnimationLoop: false,
+                                                title: 'Error',
+                                                desc:
+                                                'Wrong Credentials,Try Again!!',
+                                                btnOkOnPress: () {},
+                                                btnOkIcon: Icons.cancel,
+                                                btnOkColor: Colors.red)
+                                              ..show();
+                                          });
+                                        }else{
+                                          setState(() {
+                                            loading = false;
+                                            AwesomeDialog(
+                                                context: context,
+                                                animType: AnimType.LEFTSLIDE,
+                                                headerAnimationLoop: false,
+                                                dialogType: DialogType.SUCCES,
+                                                title: 'Success',
+                                                desc:
+                                                'Login Successful',
+                                                btnOkOnPress: () {
+                                                  debugPrint('OnClick');
+                                                },
+                                                btnOkIcon: Icons.check_circle,
+                                                onDissmissCallback: () {
+                                                  debugPrint('Dialog Dissmiss from callback');
+                                                })..show();
+
+                                          });}
+                                        // Navigator.push(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //       builder: (context) => HomePage(),
+                                        //     ));
+
+                                      }
                                     },
                                     color: Colors.green[600],
                                     child: new Text(
