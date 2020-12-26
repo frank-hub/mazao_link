@@ -9,7 +9,7 @@ class DatabaseService {
       FirebaseFirestore.instance.collection('mazaolinkusers');
 
   Future updateUserData(String name,String email, int phone, String gender, String county,
-      String address, String location) async {
+      String address, String location , bool buyer , bool seller) async {
     return await mazaoCollection.doc(uid).set({
       'Full Name': name,
       'Email Address':email,
@@ -18,6 +18,9 @@ class DatabaseService {
       'City': county,
       'Address': address,
       'Location': location,
+      'Buyer' : buyer,
+      'Seller' : seller
+
     });
   }
 

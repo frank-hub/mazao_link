@@ -31,13 +31,13 @@ class AuthService{
     }
   }
   //register with Email $ password
-  Future registerWithEmailAndPass(String email, String password) async {
+  Future registerWithEmailAndPass(String email, String password,bool seller,bool buyer) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: email, password: password );
       User user = userCredential.user;
 //create doc for the user with uid
-      await DatabaseService(uid: user.uid).updateUserData("",email ,0, 'gender', 'county', 'address', 'location');
+      await DatabaseService(uid: user.uid).updateUserData('frank',email ,0, 'gender', 'county', 'address', 'location',buyer,seller);
       return _userFromFirebaseUser(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -46,8 +46,7 @@ class AuthService{
         print('The account already exists for that email.');
       }
     } catch (e) {
-      print(e);
-    }
+      print(e);    }
   }
 //sign in Anon
   Future signInAnon() async {
