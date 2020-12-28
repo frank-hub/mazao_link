@@ -13,7 +13,6 @@ class _BuyerHomeState extends State<BuyerHome> {
       appBar: AppBar(
         title: Text("Buyer"),
       ),
-
       body: Column(
         children: <Widget>[
           //image carousel begins here
