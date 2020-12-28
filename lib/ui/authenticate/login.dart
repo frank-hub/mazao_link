@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                                       desc:
                                       'Login Successful',
                                       btnOkOnPress: () {
-                                        debugPrint('OnClick');
+
                                         Navigator.push(context,
                                         MaterialPageRoute(builder:
                                         (context)=>BuyerHome()
