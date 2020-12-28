@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mazao_link/services/auth.dart';
 class BuyerHome extends StatefulWidget {
   @override
   _BuyerHomeState createState() => _BuyerHomeState();
@@ -15,6 +17,8 @@ class _BuyerHomeState extends State<BuyerHome> {
   PageController pageController = PageController(initialPage: 0);
   StreamController<int> indexcontroller = StreamController<int>.broadcast();
   int index = 0;
+  final AuthService _auth= AuthService();
+  User _user= FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,15 @@ class _BuyerHomeState extends State<BuyerHome> {
             child: Text('Orders'),
           ),
           Center(
-            child: Text('Profile'),
+            child:
+                    FlatButton.icon(
+                     icon: Icon(Icons.person),
+                  onPressed: () async {
+                  await _auth.signOut();
+                     },
+                     label: Text('logout')),
+
+
           ),
         ],
       ),
