@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/ui/supplier/SupplierHomePage.dart';
 class BuyerHome extends StatefulWidget {
@@ -33,6 +35,7 @@ class _BuyerHomeState extends State<BuyerHome> {
           Center(
             child: Column(
               children: [
+                SizedBox(height: 150,),
                 Text('Shop'),
                 FlatButton(
                   child: Text('Supplier'),
@@ -51,15 +54,117 @@ class _BuyerHomeState extends State<BuyerHome> {
           Center(
             child: Text('Orders'),
           ),
-          Center(
-            child:  FlatButton.icon(
-                icon: Icon(Icons.person),
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-                label: Text('logout')),
-          ),
-        ],
+          Padding(
+            padding: const EdgeInsets.only(top:30.0),
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),bottomRight: Radius.circular(20.0))
+                  ),
+
+                   child: Padding(padding: EdgeInsets.all(2.0),
+                     child: Container(
+                       decoration: BoxDecoration(
+                           color: Colors.grey[300],
+                           borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),bottomRight: Radius.circular(20.0))
+                       ),
+                       child: Column(
+                         children: [
+
+                           Container(
+                             height: 210,
+                             decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [Colors.green, Colors.greenAccent]),
+                                 borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
+                             ),
+                             child: Center(
+                               child: Text("Profile",style: TextStyle(color: Colors.black,fontSize: 30),),
+                             )
+                           ),
+                           Container(
+                             decoration: BoxDecoration(
+                                 color: Colors.white,
+                                 borderRadius: BorderRadius.circular(20.0)),
+                           child: Card(
+                                child: Container(
+                                alignment: Alignment.topLeft,
+                                padding: EdgeInsets.all(22),
+                                child: Column(
+                                children: <Widget>[
+                                Column(
+                                children: <Widget>[
+                                ...ListTile.divideTiles(
+                                color: Colors.grey,
+                                tiles: [
+                                  ListTile(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 12, vertical: 4),
+                                    leading: Icon(Icons.info),
+                                    title: Text("Full Name"),
+                                    subtitle: Text("name"),
+                                  ),
+                                  ListTile(
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal: 12, vertical: 4),
+                                    leading: Icon(Icons.location_city),
+                                    title: Text("County"),
+                                    subtitle: Text("Kericho"),
+                                  ),
+                                ListTile(
+                                contentPadding: EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 4),
+                                leading: Icon(Icons.my_location),
+                                title: Text("Location"),
+                                subtitle: Text("location"),
+                                ),
+                                ListTile(
+                                leading: Icon(FontAwesomeIcons.genderless),
+                                title: Text("Gender"),
+                                subtitle: Text("male"),
+                                ),
+                                ListTile(
+                                leading: Icon(Icons.phone),
+                                title: Text("Phone"),
+                                subtitle: Text("07888"),
+                                ),
+                                ListTile(
+                                leading: Icon(FontAwesomeIcons.user),
+                                title: Text("About Me"),
+                                subtitle: Text(
+                                "This is a about me link and you can khow about me in this section."),
+                                )
+                                ],
+    ),
+    ],
+    ),
+    ],
+    ),
+    ),
+    ),
+    ),
+    ]
+                           ),
+                           ),
+    ),
+
+
+                      ),
+                         ],
+
+                       ),
+                     ),
+
+
+
+              ],
+
+
+
+
       ),
       bottomNavigationBar: StreamBuilder<Object>(
           initialData: 0,
@@ -234,5 +339,127 @@ class FancyBottomNavigationItem {
   }) {
     assert(icon != null);
     assert(title != null);
+  }
+}
+class ProfileHeader extends StatelessWidget {
+  final ImageProvider<dynamic> coverImage;
+  final ImageProvider<dynamic> avatar;
+  final String title;
+  final String subtitle;
+  final List<Widget> actions;
+
+  const ProfileHeader(
+      {Key key,
+        @required this.coverImage,
+        @required this.avatar,
+        @required this.title,
+        this.subtitle,
+        this.actions})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Ink(
+          height: 200,
+          decoration: BoxDecoration(
+            image: DecorationImage(image: coverImage, fit: BoxFit.cover),
+          ),
+        ),
+        Ink(
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.black38,
+          ),
+        ),
+        if (actions != null)
+          Container(
+            width: double.infinity,
+            height: 200,
+            padding: const EdgeInsets.only(bottom: 0.0, right: 0.0),
+            alignment: Alignment.bottomRight,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: actions,
+            ),
+          ),
+        Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(top: 160),
+          child: Column(
+            children: <Widget>[
+              Avatar(
+                image: avatar,
+                radius: 40,
+                backgroundColor: Colors.white,
+                borderColor: Colors.grey.shade300,
+                borderWidth: 4.0,
+              ),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.title,
+              ),
+              if (subtitle != null) ...[
+                const SizedBox(height: 5.0),
+                Text(
+                  subtitle,
+                  style: Theme.of(context).textTheme.subtitle,
+                ),
+              ]
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class Avatar extends StatelessWidget {
+  final ImageProvider<dynamic> image;
+  final Color borderColor;
+  final Color backgroundColor;
+  final double radius;
+  final double borderWidth;
+
+  const Avatar(
+      {Key key,
+        @required this.image,
+        this.borderColor = Colors.grey,
+        this.backgroundColor,
+        this.radius = 30,
+        this.borderWidth = 5})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: radius + borderWidth,
+      backgroundColor: borderColor,
+      child: CircleAvatar(
+        radius: radius,
+        backgroundColor: backgroundColor != null
+            ? backgroundColor
+            : Theme.of(context).primaryColor,
+        child: CircleAvatar(
+          radius: radius - borderWidth,
+          backgroundImage: image,
+        ),
+      ),
+    );
+  }
+
+  Widget _getEditIcon() {
+    return new GestureDetector(
+      child: new CircleAvatar(
+        backgroundColor: Colors.red,
+        radius: 14.0,
+        child: new Icon(
+          Icons.edit,
+          color: Colors.white,
+          size: 16.0,
+        ),
+      ),
+      onTap: () {},
+    );
   }
 }

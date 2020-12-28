@@ -173,10 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                                       'Login Successful',
                                       btnOkOnPress: () {
 
-                                        Navigator.push(context,
-                                        MaterialPageRoute(builder:
-                                        (context)=>BuyerHome()
-                                        ));
+
                                       },
                                       btnOkIcon: Icons.check_circle,
                                       onDissmissCallback: () {
