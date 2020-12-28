@@ -59,15 +59,12 @@ class _BuyerHomeState extends State<BuyerHome> {
             child: Stack(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),bottomRight: Radius.circular(20.0))
-                  ),
 
                    child: Padding(padding: EdgeInsets.all(2.0),
                      child: Container(
                        decoration: BoxDecoration(
                            color: Colors.grey[300],
-                           borderRadius: BorderRadius.only(bottomLeft:Radius.circular(20.0),bottomRight: Radius.circular(20.0))
+
                        ),
                        child: Column(
                          children: [
@@ -88,7 +85,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                            Container(
                              decoration: BoxDecoration(
                                  color: Colors.white,
-                                 borderRadius: BorderRadius.circular(20.0)),
+                                 borderRadius: BorderRadius.circular(10.0)),
                            child: Card(
                                 child: Container(
                                 alignment: Alignment.topLeft,
