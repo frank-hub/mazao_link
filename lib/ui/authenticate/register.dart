@@ -4,6 +4,7 @@ import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/ui/buyer/BuyerHomePage.dart';
 import 'package:mazao_link/ui/shared/loading.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:mazao_link/ui/supplier/SupplierHomePage.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
@@ -368,10 +369,21 @@ class _RegisterState extends State<Register> {
                                                   desc:
                                                   'Register Successful',
                                                   btnOkOnPress: () {
-                                                    debugPrint('OnClcik');
-                                                    Navigator.push(context, MaterialPageRoute(
-                                                      builder: (context)=>BuyerHome()
-                                                    ));
+                                                    if(_character.toString() == "SingingCharacter.Buyer") {
+                                                      Navigator.push(context,
+                                                          MaterialPageRoute(
+                                                              builder: (
+                                                                  context) =>
+                                                                  BuyerHome()
+                                                          ));
+                                                    }else{
+                                                      Navigator.push(context,
+                                                          MaterialPageRoute(
+                                                              builder: (
+                                                                  context) =>
+                                                                  SupplierHome()
+                                                          ));
+                                                    }
                                                   },
                                                   btnOkIcon: Icons.check_circle,
                                                   onDissmissCallback: () {

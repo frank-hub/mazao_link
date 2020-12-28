@@ -13,28 +13,7 @@ class _BuyerHomeState extends State<BuyerHome> {
       appBar: AppBar(
         title: Text("Buyer"),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.add_business_sharp),
-            title: new Text('Home'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.shopping_cart),
-            title: new Text('Cart'),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.library_books),
-            title: new Text('Orders'),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile'),
-            backgroundColor: Colors.black
-          )
-        ],
-      ),
+
       body: Column(
         children: <Widget>[
           //image carousel begins here
@@ -59,6 +38,27 @@ class _BuyerHomeState extends State<BuyerHome> {
           Flexible(child: Products()),
 
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            title: Text('Cart'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_books),
+            title: Text('Orders'),
+          ),
+
+
+        ],
+
+        selectedItemColor: Colors.amber[800],
+
       ),
     );
   }
