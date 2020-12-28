@@ -34,8 +34,8 @@ class _BuyerHomeState extends State<BuyerHome> {
                   child: Text('Supplier'),
                   onPressed: (){
                     Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>SupplierHome()
-                    ));
+                        MaterialPageRoute(builder: (context)=>SupplierHome()
+                        ));
                   },
                 )
               ],
@@ -92,7 +92,7 @@ class FancyBottomNavigation extends StatefulWidget {
       {Key key,
         this.currentIndex = 0,
         this.iconSize = 24,
-        this.activeColor,
+        this.activeColor = Colors.green,
         this.inactiveColor,
         this.backgroundColor,
         @required this.items,
@@ -117,7 +117,7 @@ class FancyBottomNavigation extends StatefulWidget {
 class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
   final int currentIndex;
   final double iconSize;
-  Color activeColor;
+  Color activeColor = Colors.green;
   Color inactiveColor;
   Color backgroundColor;
   List<FancyBottomNavigationItem> items;
@@ -127,7 +127,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
   _FancyBottomNavigationState(
       {@required this.items,
         this.currentIndex,
-        this.activeColor ,
+        this.activeColor = Colors.green,
         this.inactiveColor = Colors.black,
         this.backgroundColor,
         this.iconSize,
