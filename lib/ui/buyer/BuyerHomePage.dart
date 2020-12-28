@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mazao_link/ui/supplier/SupplierHomePage.dart';
 class BuyerHome extends StatefulWidget {
   @override
   _BuyerHomeState createState() => _BuyerHomeState();
@@ -26,7 +27,19 @@ class _BuyerHomeState extends State<BuyerHome> {
         controller: pageController,
         children: <Widget>[
           Center(
-            child: Text('Shop'),
+            child: Column(
+              children: [
+                Text('Shop'),
+                FlatButton(
+                  child: Text('Supplier'),
+                  onPressed: (){
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>SupplierHome()
+                    ));
+                  },
+                )
+              ],
+            ),
           ),
           Center(
             child: Text('Cart'),
@@ -48,7 +61,7 @@ class _BuyerHomeState extends State<BuyerHome> {
               currentIndex: cIndex,
               items: <FancyBottomNavigationItem>[
                 FancyBottomNavigationItem(
-                    icon: Icon(Icons.store_mall_directory_outlined), title: Text('Shop',style: TextStyle(color: Colors.black),)),
+                    icon: Icon(Icons.store_mall_directory_outlined), title: Text('Shop')),
                 FancyBottomNavigationItem(
                     icon: Icon(Icons.shopping_cart), title: Text('Cart')),
                 FancyBottomNavigationItem(
@@ -114,7 +127,7 @@ class _FancyBottomNavigationState extends State<FancyBottomNavigation> {
   _FancyBottomNavigationState(
       {@required this.items,
         this.currentIndex,
-        this.activeColor,
+        this.activeColor ,
         this.inactiveColor = Colors.black,
         this.backgroundColor,
         this.iconSize,
