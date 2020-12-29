@@ -24,7 +24,7 @@ class _BuyerHomeState extends State<BuyerHome> {
   }
   TextStyle style=TextStyle(
     fontWeight: FontWeight.bold,
-    fontSize: 20
+
   );
   String greeting() {
     var hour = DateTime.now().hour;
@@ -92,8 +92,32 @@ class _BuyerHomeState extends State<BuyerHome> {
                                            colors: [Colors.green[600], Colors.green[300]]),
                                        borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
                                    ),
-                                 child: Center(
-                                   child: Text("Profile",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
+                                 child: Row(
+                                   children: [
+                                     Padding(
+                                       padding: const EdgeInsets.only(left: 35.0),
+                                       child: Text("Profile",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
+                                     ),
+                                     Padding(
+                                       padding: EdgeInsets.only(left: 225.0,top: 160),
+                                       child: GestureDetector(
+                                         child: new CircleAvatar(
+                                           backgroundColor: Colors.white,
+                                           radius: 18.0,
+                                           child: new Icon(
+                                             Icons.edit,
+                                             color: Colors.red,
+                                             size: 20.0,
+                                           ),
+                                         ),
+                                         onTap: () {
+                                         },
+                                       ),
+                                     ),
+
+
+
+                                   ],
                                  )
                                ),
                                Container(
@@ -140,7 +164,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                                     ListTile(
                                     leading: Icon(Icons.phone,color: Colors.green,),
                                     title: Text("Phone",style: style,),
-                                    subtitle: Text(userData.phone.toString()),
+                                    subtitle: Text("+254"+userData.phone.toString()),
                                     ),
                                     ListTile(
                                     leading: Icon(FontAwesomeIcons.user,color: Colors.green,),
@@ -199,7 +223,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                     pageController.jumpToPage(value);
                   },
                 );
-              }),
+              })
         );
         }
       }
