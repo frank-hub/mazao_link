@@ -28,7 +28,8 @@ class _TopNavState extends State<TopNav> {
             UserData userData=snapshot.data;
             if(!snapshot.hasData){
               return Loading();
-            }            return Padding(
+            }
+            return Padding(
               padding: EdgeInsets.only(top: 0),
               child: Stack(
                 children: [
@@ -46,7 +47,7 @@ class _TopNavState extends State<TopNav> {
                         child:Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(20 ,50 , 10,20),
+                              padding: const EdgeInsets.fromLTRB(45 ,50 , 10,0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -64,9 +65,9 @@ class _TopNavState extends State<TopNav> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 20,),
+                            SizedBox(height: 30,),
                             Padding(
-                              padding: EdgeInsets.only(right: 160),
+                              padding: EdgeInsets.only(right: 180),
                               child: Text('Good '+greeting() +'\n' +userData.name,
                                 style: TextStyle(
                                     fontSize: 25,
@@ -76,7 +77,7 @@ class _TopNavState extends State<TopNav> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(20,15,20,0),
+                              padding: EdgeInsets.fromLTRB(40,45,40,0),
                               child: TextField(
                                 decoration: InputDecoration(
                                     hintText: 'Search What You Looking For...',
