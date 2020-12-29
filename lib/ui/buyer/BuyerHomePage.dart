@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mazao_link/components/topNav.dart';
 import 'package:mazao_link/models/user.dart';
@@ -61,7 +62,390 @@ class _BuyerHomeState extends State<BuyerHome> {
             },
             controller: pageController,
             children: <Widget>[
-              TopNav(),
+              Column(
+                children: [
+                  TopNav(),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+//                color: Colors.blue,
+                          elevation: 10,
+                          child: Row(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.all(10.0),
+                                child: GestureDetector(
+                                  onTap: () {
+
+                                  },
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(75.0)),
+                                        boxShadow: [
+                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  return showDialog<void>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext conext) {
+                                      return AlertDialog(
+                                        title: Text('Not in stock'),
+                                        content:
+                                        const Text('This item is no longer available'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            child: Text('Ok'),
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                    padding: EdgeInsets.all(30.0),
+                                    child: Chip(
+                                      label: Text('@anonymous'),
+                                      shadowColor: Colors.blue,
+                                      backgroundColor: Colors.green,
+                                      elevation: 10,
+                                      autofocus: true,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
               Center(
                 child: Text('Cart'),
               ),
