@@ -55,6 +55,7 @@ class _TopNavState extends State<TopNav> {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
+
                                         fontWeight: FontWeight.bold
                                     ),),
                                   IconButton(

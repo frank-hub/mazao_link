@@ -22,6 +22,10 @@ class _BuyerHomeState extends State<BuyerHome> {
     indexcontroller.close();
     super.dispose();
   }
+  TextStyle style=TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20
+  );
   String greeting() {
     var hour = DateTime.now().hour;
     if (hour < 12) {
@@ -65,7 +69,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                 child: Text('Orders'),
               ),
               Padding(
-                padding: const EdgeInsets.only(top:30.0),
+                padding: const EdgeInsets.only(top:0),
                 child: Stack(
                   children: [
                     Container(
@@ -80,16 +84,16 @@ class _BuyerHomeState extends State<BuyerHome> {
                              children: [
 
                                Container(
-                                 height: 210,
-                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [Colors.green, Colors.greenAccent]),
-                                     borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
-                                 ),
+                                 height: 240,
+                                   decoration: BoxDecoration(
+                                       gradient: LinearGradient(
+                                           begin: Alignment.topRight,
+                                           end: Alignment.bottomRight,
+                                           colors: [Colors.green[600], Colors.green[300]]),
+                                       borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
+                                   ),
                                  child: Center(
-                                   child: Text("Profile",style: TextStyle(color: Colors.black,fontSize: 30),),
+                                   child: Text("Profile",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
                                  )
                                ),
                                Container(
@@ -110,37 +114,37 @@ class _BuyerHomeState extends State<BuyerHome> {
                                       ListTile(
                                         contentPadding: EdgeInsets.symmetric(
                                             horizontal: 12, vertical: 4),
-                                        leading: Icon(Icons.info),
-                                        title: Text("Full Name"),
+                                        leading: Icon(Icons.info,color: Colors.green,),
+                                        title: Text("Full Name",style: style,),
                                         subtitle: Text(userData.name),
                                       ),
                                       ListTile(
                                         contentPadding: EdgeInsets.symmetric(
                                             horizontal: 12, vertical: 4),
-                                        leading: Icon(Icons.location_city),
-                                        title: Text("County"),
+                                        leading: Icon(Icons.location_city,color: Colors.green,),
+                                        title: Text("County",style: style,),
                                         subtitle: Text(userData.county),
                                       ),
                                     ListTile(
                                     contentPadding: EdgeInsets.symmetric(
                                     horizontal: 12, vertical: 4),
-                                    leading: Icon(Icons.my_location),
-                                    title: Text("Location"),
+                                    leading: Icon(Icons.my_location,color: Colors.green,),
+                                    title: Text("Location",style: style,),
                                     subtitle: Text(userData.address+"  " + userData.location),
                                     ),
                                     ListTile(
-                                    leading: Icon(FontAwesomeIcons.genderless),
-                                    title: Text("Gender"),
+                                    leading: Icon(FontAwesomeIcons.genderless,color: Colors.green,),
+                                    title: Text("Gender",style: style,),
                                     subtitle: Text(userData.gender),
                                     ),
                                     ListTile(
-                                    leading: Icon(Icons.phone),
-                                    title: Text("Phone"),
+                                    leading: Icon(Icons.phone,color: Colors.green,),
+                                    title: Text("Phone",style: style,),
                                     subtitle: Text(userData.phone.toString()),
                                     ),
                                     ListTile(
-                                    leading: Icon(FontAwesomeIcons.user),
-                                    title: Text("About Me"),
+                                    leading: Icon(FontAwesomeIcons.user,color: Colors.green,),
+                                    title: Text("About Me",style:style ,),
                                     subtitle: Text(
                                     "This is a about me link and you can know about me in this section."),
                                     )
