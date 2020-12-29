@@ -86,7 +86,8 @@ class _TopNavState extends State<TopNav> {
                                     filled: true,
                                     fillColor: Colors.white,
                                     border: OutlineInputBorder(
-
+                                      borderRadius: BorderRadius.circular(10.0)
+ 
                                     )
                                 ),
                               ),
