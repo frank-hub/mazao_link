@@ -7,6 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/services/database.dart';
+import 'package:mazao_link/ui/shared/loading.dart';
 import 'package:mazao_link/ui/supplier/SupplierHomePage.dart';
 import 'package:provider/provider.dart';
 class BuyerHome extends StatefulWidget {
@@ -31,170 +32,177 @@ class _BuyerHomeState extends State<BuyerHome> {
     return StreamBuilder<Object>(
       stream: DatabaseService(uid:user.uid).userData,
       builder: (context, snapshot) {
-        UserData userData=snapshot.data;
-        return Scaffold(
-          body: PageView(
-            physics: NeverScrollableScrollPhysics(),
-            onPageChanged: (index) {
-              indexcontroller.add(index);
-            },
-            controller: pageController,
-            children: <Widget>[
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(height: 150,),
-                    Text('Shop'),
-                    FlatButton(
-                      child: Text('Supplier'),
-                      onPressed: (){
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>SupplierHome()
-                            ));
-                      },
-                    )
-                  ],
+
+        if(!snapshot.hasData){
+          return Loading();
+        }else{
+          UserData userData=snapshot.data;
+          return Scaffold(
+            body: PageView(
+              physics: NeverScrollableScrollPhysics(),
+              onPageChanged: (index) {
+                indexcontroller.add(index);
+              },
+              controller: pageController,
+              children: <Widget>[
+                Center(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 150,),
+                      Text('Shop'),
+                      FlatButton(
+                        child: Text('Supplier'),
+                        onPressed: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>SupplierHome()
+                              ));
+                        },
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Center(
-                child: Text('Cart'),
-              ),
-              Center(
-                child: Text('Orders'),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top:30.0),
-                child: Stack(
-                  children: [
-                    Container(
+                Center(
+                  child: Text('Cart'),
+                ),
+                Center(
+                  child: Text('Orders'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top:30.0),
+                  child: Stack(
+                    children: [
+                      Container(
 
-                       child: Padding(padding: EdgeInsets.all(2.0),
-                         child: Container(
-                           decoration: BoxDecoration(
-                               color: Colors.grey[300],
+                        child: Padding(padding: EdgeInsets.all(2.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
 
-                           ),
-                           child: Column(
-                             children: [
+                            ),
+                            child: Column(
+                                children: [
 
-                               Container(
-                                 height: 210,
-                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [Colors.green, Colors.greenAccent]),
-                                     borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
-                                 ),
-                                 child: Center(
-                                   child: Text("Profile",style: TextStyle(color: Colors.black,fontSize: 30),),
-                                 )
-                               ),
-                               Container(
-                                 decoration: BoxDecoration(
-                                     color: Colors.white,
-                                     borderRadius: BorderRadius.circular(10.0)),
-                               child: Card(
-                                    child: Container(
-                                    alignment: Alignment.topLeft,
-                                    padding: EdgeInsets.all(22),
-                                    child: Column(
-                                    children: <Widget>[
-                                    Column(
-                                    children: <Widget>[
-                                    ...ListTile.divideTiles(
-                                    color: Colors.grey,
-                                    tiles: [
-                                      ListTile(
-                                        contentPadding: EdgeInsets.symmetric(
-                                            horizontal: 12, vertical: 4),
-                                        leading: Icon(Icons.info),
-                                        title: Text("Full Name"),
-                                        subtitle: Text(userData.name),
+                                  Container(
+                                      height: 210,
+                                      decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                              colors: [Colors.green, Colors.greenAccent]),
+                                          borderRadius: BorderRadius.only(bottomLeft:Radius.circular(40.0),bottomRight: Radius.circular(40.0))
                                       ),
-                                      ListTile(
-                                        contentPadding: EdgeInsets.symmetric(
-                                            horizontal: 12, vertical: 4),
-                                        leading: Icon(Icons.location_city),
-                                        title: Text("County"),
-                                        subtitle: Text(userData.county),
+                                      child: Center(
+                                        child: Text("Profile",style: TextStyle(color: Colors.black,fontSize: 30),),
+                                      )
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10.0)),
+                                    child: Card(
+                                      child: Container(
+                                        alignment: Alignment.topLeft,
+                                        padding: EdgeInsets.all(22),
+                                        child: Column(
+                                          children: <Widget>[
+                                            Column(
+                                              children: <Widget>[
+                                                ...ListTile.divideTiles(
+                                                  color: Colors.grey,
+                                                  tiles: [
+                                                    ListTile(
+                                                      contentPadding: EdgeInsets.symmetric(
+                                                          horizontal: 12, vertical: 4),
+                                                      leading: Icon(Icons.info),
+                                                      title: Text("Full Name"),
+                                                      subtitle: Text(userData.name),
+                                                    ),
+                                                    ListTile(
+                                                      contentPadding: EdgeInsets.symmetric(
+                                                          horizontal: 12, vertical: 4),
+                                                      leading: Icon(Icons.location_city),
+                                                      title: Text("County"),
+                                                      subtitle: Text(userData.county),
+                                                    ),
+                                                    ListTile(
+                                                      contentPadding: EdgeInsets.symmetric(
+                                                          horizontal: 12, vertical: 4),
+                                                      leading: Icon(Icons.my_location),
+                                                      title: Text("Location"),
+                                                      subtitle: Text(userData.address+"  " + userData.location),
+                                                    ),
+                                                    ListTile(
+                                                      leading: Icon(FontAwesomeIcons.genderless),
+                                                      title: Text("Gender"),
+                                                      subtitle: Text(userData.gender),
+                                                    ),
+                                                    ListTile(
+                                                      leading: Icon(Icons.phone),
+                                                      title: Text("Phone"),
+                                                      subtitle: Text(userData.phone.toString()),
+                                                    ),
+                                                    ListTile(
+                                                      leading: Icon(FontAwesomeIcons.user),
+                                                      title: Text("About Me"),
+                                                      subtitle: Text(
+                                                          "This is a about me link and you can know about me in this section."),
+                                                    )
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ListTile(
-                                    contentPadding: EdgeInsets.symmetric(
-                                    horizontal: 12, vertical: 4),
-                                    leading: Icon(Icons.my_location),
-                                    title: Text("Location"),
-                                    subtitle: Text(userData.address+"  " + userData.location),
                                     ),
-                                    ListTile(
-                                    leading: Icon(FontAwesomeIcons.genderless),
-                                    title: Text("Gender"),
-                                    subtitle: Text(userData.gender),
-                                    ),
-                                    ListTile(
-                                    leading: Icon(Icons.phone),
-                                    title: Text("Phone"),
-                                    subtitle: Text(userData.phone.toString()),
-                                    ),
-                                    ListTile(
-                                    leading: Icon(FontAwesomeIcons.user),
-                                    title: Text("About Me"),
-                                    subtitle: Text(
-                                    "This is a about me link and you can know about me in this section."),
-                                    )
-                                    ],
-        ),
-        ],
-        ),
-        ],
-        ),
-        ),
-        ),
-        ),
-        ]
-                               ),
-                               ),
-        ),
-
-
+                                  ),
+                                ]
+                            ),
                           ),
-                             ],
-
-                           ),
-                         ),
+                        ),
 
 
+                      ),
+                    ],
 
-                  ],
+                  ),
+                ),
+
+
+
+              ],
 
 
 
 
-          ),
-          bottomNavigationBar: StreamBuilder<Object>(
-              initialData: 0,
-              stream: indexcontroller.stream,
-              builder: (context, snapshot) {
-                int cIndex = snapshot.data;
-                return FancyBottomNavigation(
-                  currentIndex: cIndex,
-                  items: <FancyBottomNavigationItem>[
-                    FancyBottomNavigationItem(
-                        icon: Icon(Icons.store_mall_directory_outlined), title: Text('Shop')),
-                    FancyBottomNavigationItem(
-                        icon: Icon(Icons.shopping_cart), title: Text('Cart')),
-                    FancyBottomNavigationItem(
-                        icon: Icon(Icons.library_books_rounded), title: Text('Orders')),
-                    FancyBottomNavigationItem(
-                        icon: Icon(Icons.person_pin_outlined), title: Text('Profile')),
-                  ],
-                  onItemSelected: (int value) {
-                    indexcontroller.add(value);
-                    pageController.jumpToPage(value);
-                  },
-                );
-              }),
-        );
+            ),
+            bottomNavigationBar: StreamBuilder<Object>(
+                initialData: 0,
+                stream: indexcontroller.stream,
+                builder: (context, snapshot) {
+                  int cIndex = snapshot.data;
+                  return FancyBottomNavigation(
+                    currentIndex: cIndex,
+                    items: <FancyBottomNavigationItem>[
+                      FancyBottomNavigationItem(
+                          icon: Icon(Icons.store_mall_directory_outlined), title: Text('Shop')),
+                      FancyBottomNavigationItem(
+                          icon: Icon(Icons.shopping_cart), title: Text('Cart')),
+                      FancyBottomNavigationItem(
+                          icon: Icon(Icons.library_books_rounded), title: Text('Orders')),
+                      FancyBottomNavigationItem(
+                          icon: Icon(Icons.person_pin_outlined), title: Text('Profile')),
+                    ],
+                    onItemSelected: (int value) {
+                      indexcontroller.add(value);
+                      pageController.jumpToPage(value);
+                    },
+                  );
+                }),
+          );
+        }
+
+
       }
     );
   }

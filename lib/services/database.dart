@@ -23,8 +23,6 @@ class DatabaseService {
 
     });
   }
-
-
   //userData from snapshot
   UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
@@ -37,7 +35,6 @@ class DatabaseService {
         phone: snapshot.data()['Phone Number']?? 0,
         address: snapshot.data()['Address'] ?? '');
   }
-
   //get user doc stream
   Stream<UserData> get userData {
     return mazaoCollection

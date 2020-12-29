@@ -331,7 +331,6 @@ class _RegisterState extends State<Register> {
                                           }else{
                                             seller=true;
                                           }
-
                                           dynamic result = await _auth
                                               .registerWithEmailAndPass(
                                                   email, password,seller,buyer);
@@ -405,7 +404,6 @@ class _RegisterState extends State<Register> {
                                       ),
                                     ),
                                   ),
-
                                 ],
                               ),
                             ),
