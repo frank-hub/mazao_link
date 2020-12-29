@@ -94,6 +94,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                                    ),
                                  child: Row(
                                    children: [
+
                                      Padding(
                                        padding: const EdgeInsets.only(left: 35.0),
                                        child: Text("Profile",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
