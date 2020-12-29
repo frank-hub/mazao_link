@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mazao_link/components/topNav.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/services/database.dart';
@@ -20,6 +21,16 @@ class _BuyerHomeState extends State<BuyerHome> {
     indexcontroller.close();
     super.dispose();
   }
+  String greeting() {
+    var hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'Morning';
+    }
+    if (hour < 17) {
+      return 'Afternoon';
+    }
+    return 'Evening';
+  }
   PageController pageController = PageController(initialPage: 0);
   StreamController<int> indexcontroller = StreamController<int>.broadcast();
   int index = 0;
@@ -28,7 +39,7 @@ class _BuyerHomeState extends State<BuyerHome> {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<CurrentUser>(context);
-    return StreamBuilder<Object>(
+    return  StreamBuilder<Object>(
       stream: DatabaseService(uid:user.uid).userData,
       builder: (context, snapshot) {
         UserData userData=snapshot.data;
@@ -40,22 +51,7 @@ class _BuyerHomeState extends State<BuyerHome> {
             },
             controller: pageController,
             children: <Widget>[
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(height: 150,),
-                    Text('Shop'),
-                    FlatButton(
-                      child: Text('Supplier'),
-                      onPressed: (){
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>SupplierHome()
-                            ));
-                      },
-                    )
-                  ],
-                ),
-              ),
+              TopNav(),
               Center(
                 child: Text('Cart'),
               ),
