@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/database.dart';
+import 'package:mazao_link/ui/shared/loading.dart';
 import 'package:provider/provider.dart';
 class TopNav extends StatefulWidget {
   @override
@@ -25,7 +26,9 @@ class _TopNavState extends State<TopNav> {
           stream: DatabaseService(uid:user.uid).userData,
           builder: (context, snapshot) {
             UserData userData=snapshot.data;
-            return Padding(
+            if(!snapshot.hasData){
+              return Loading();
+            }            return Padding(
               padding: EdgeInsets.only(top: 0),
               child: Stack(
                 children: [

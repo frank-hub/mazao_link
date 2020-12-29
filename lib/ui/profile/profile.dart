@@ -398,7 +398,7 @@ class MapScreenState extends State<EditProfile>
           ),
         ),
       ),
-    );;
+    );
   }
 
   @override

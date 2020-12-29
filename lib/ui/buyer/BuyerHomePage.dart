@@ -8,6 +8,7 @@ import 'package:mazao_link/components/topNav.dart';
 import 'package:mazao_link/models/user.dart';
 import 'package:mazao_link/services/auth.dart';
 import 'package:mazao_link/services/database.dart';
+import 'package:mazao_link/ui/shared/loading.dart';
 import 'package:mazao_link/ui/supplier/SupplierHomePage.dart';
 import 'package:provider/provider.dart';
 class BuyerHome extends StatefulWidget {
@@ -42,7 +43,12 @@ class _BuyerHomeState extends State<BuyerHome> {
     return  StreamBuilder<Object>(
       stream: DatabaseService(uid:user.uid).userData,
       builder: (context, snapshot) {
-        UserData userData=snapshot.data;
+
+
+        if(!snapshot.hasData){
+          return Loading();
+        }else{
+          UserData userData=snapshot.data;
         return Scaffold(
           body: PageView(
             physics: NeverScrollableScrollPhysics(),
@@ -191,6 +197,7 @@ class _BuyerHomeState extends State<BuyerHome> {
                 );
               }),
         );
+        }
       }
     );
   }

@@ -1,4 +1,6 @@
 
+import 'package:flutter/cupertino.dart';
+
 class CurrentUser {
   final String uid;
 
@@ -18,15 +20,15 @@ class UserData {
   bool buyer;
   bool seller;
   UserData(
-      {this.uid,
-        this.location,
-        this.name,
-        this.email,
-        this.address,
-        this.county,
-        this.phone,
-        this.gender,
-        this.buyer,
-        this.seller
+      { @required this.uid,
+      @required this.location,
+       @required this.name,
+        @required    this.email,
+        @required   this.address,
+        @required  this.county,
+        @required this.phone,
+        @required this.gender,
+        @required  this.buyer,
+        @required this.seller
       });
 }
