@@ -65,13 +65,12 @@ class _BuyerHomeState extends State<BuyerHome> {
               Column(
                 children: [
                   TopNav(),
+                  SizedBox(height: 20,),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         Card(
-//                color: Colors.blue,
-                          elevation: 10,
                           child: Row(
                             children: <Widget>[
                               Padding(
@@ -84,15 +83,12 @@ class _BuyerHomeState extends State<BuyerHome> {
                                     width: 100.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
+                                      color: Colors.red,
+                                      image: DecorationImage(
+                                          image: AssetImage('images/w4.jpeg'),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -119,21 +115,30 @@ class _BuyerHomeState extends State<BuyerHome> {
                                   );
                                 },
                                 child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
+                                    padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                    child: Column(
+                                      children: [
+
+                                        Text("Gucci Watch",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Chip(
+                                          label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                          shadowColor: Colors.blue,
+                                          backgroundColor: Colors.green,
+                                          elevation: 10,
+                                          autofocus: true,
+                                        ),
+                                      ],
                                     )),
                               ),
                             ],
                           ),
                         ),
                         Card(
-//                color: Colors.blue,
-                          elevation: 10,
                           child: Row(
                             children: <Widget>[
                               Padding(
@@ -146,15 +151,12 @@ class _BuyerHomeState extends State<BuyerHome> {
                                     width: 100.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
+                                      color: Colors.red,
+                                      image: DecorationImage(
+                                          image: AssetImage('images/w3.jpeg'),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -181,21 +183,30 @@ class _BuyerHomeState extends State<BuyerHome> {
                                   );
                                 },
                                 child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
+                                    padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                    child: Column(
+                                      children: [
+
+                                        Text("Gucci Watch",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Chip(
+                                          label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                          shadowColor: Colors.blue,
+                                          backgroundColor: Colors.green,
+                                          elevation: 10,
+                                          autofocus: true,
+                                        ),
+                                      ],
                                     )),
                               ),
                             ],
                           ),
                         ),
                         Card(
-//                color: Colors.blue,
-                          elevation: 10,
                           child: Row(
                             children: <Widget>[
                               Padding(
@@ -208,15 +219,12 @@ class _BuyerHomeState extends State<BuyerHome> {
                                     width: 100.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
+                                      color: Colors.red,
+                                      image: DecorationImage(
+                                          image: AssetImage('images/m1.jpeg'),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -243,21 +251,30 @@ class _BuyerHomeState extends State<BuyerHome> {
                                   );
                                 },
                                 child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
+                                    padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                    child: Column(
+                                      children: [
+
+                                        Text("Gucci Watch",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Chip(
+                                          label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                          shadowColor: Colors.blue,
+                                          backgroundColor: Colors.green,
+                                          elevation: 10,
+                                          autofocus: true,
+                                        ),
+                                      ],
                                     )),
                               ),
                             ],
                           ),
                         ),
                         Card(
-//                color: Colors.blue,
-                          elevation: 10,
                           child: Row(
                             children: <Widget>[
                               Padding(
@@ -270,15 +287,12 @@ class _BuyerHomeState extends State<BuyerHome> {
                                     width: 100.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
+                                      color: Colors.red,
+                                      image: DecorationImage(
+                                          image: AssetImage('images/m2.jpg'),
+                                          fit: BoxFit.cover),
+                                      borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -305,137 +319,24 @@ class _BuyerHomeState extends State<BuyerHome> {
                                   );
                                 },
                                 child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
-                                    )),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Card(
-//                color: Colors.blue,
-                          elevation: 10,
-                          child: Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: GestureDetector(
-                                  onTap: () {
+                                    padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                    child: Column(
+                                      children: [
 
-                                  },
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
-                                  ),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  return showDialog<void>(
-                                    context: context,
-                                    barrierDismissible: false,
-                                    builder: (BuildContext conext) {
-                                      return AlertDialog(
-                                        title: Text('Not in stock'),
-                                        content:
-                                        const Text('This item is no longer available'),
-                                        actions: <Widget>[
-                                          FlatButton(
-                                            child: Text('Ok'),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
+                                        Text("Gucci Watch",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
                                           ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
-                                    )),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Card(
-//                color: Colors.blue,
-                          elevation: 10,
-                          child: Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: GestureDetector(
-                                  onTap: () {
-
-                                  },
-                                  child: Container(
-                                    width: 100.0,
-                                    height: 100.0,
-                                    decoration: BoxDecoration(
-                                        color: Colors.red,
-                                        image: DecorationImage(
-                                            image: AssetImage('images/w4.jpeg'),
-                                            fit: BoxFit.cover),
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                        boxShadow: [
-                                          BoxShadow(blurRadius: 7.0, color: Colors.black)
-                                        ]),
-                                  ),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  return showDialog<void>(
-                                    context: context,
-                                    barrierDismissible: false,
-                                    builder: (BuildContext conext) {
-                                      return AlertDialog(
-                                        title: Text('Not in stock'),
-                                        content:
-                                        const Text('This item is no longer available'),
-                                        actions: <Widget>[
-                                          FlatButton(
-                                            child: Text('Ok'),
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                        ],
-                                      );
-                                    },
-                                  );
-                                },
-                                child: Container(
-                                    padding: EdgeInsets.all(30.0),
-                                    child: Chip(
-                                      label: Text('@anonymous'),
-                                      shadowColor: Colors.blue,
-                                      backgroundColor: Colors.green,
-                                      elevation: 10,
-                                      autofocus: true,
+                                        ),
+                                        Chip(
+                                          label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                          shadowColor: Colors.blue,
+                                          backgroundColor: Colors.green,
+                                          elevation: 10,
+                                          autofocus: true,
+                                        ),
+                                      ],
                                     )),
                               ),
                             ],
