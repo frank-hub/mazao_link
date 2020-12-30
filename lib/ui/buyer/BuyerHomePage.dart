@@ -344,6 +344,307 @@ class _BuyerHomeState extends State<BuyerHome> {
                         ),
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('All Products',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text('See All',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                        ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Column(
+                        children: [
+                          Card(
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+
+                                    },
+                                    child: Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w4.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    return showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext conext) {
+                                        return AlertDialog(
+                                          title: Text('Not in stock'),
+                                          content:
+                                          const Text('This item is no longer available'),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('Ok'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                      child: Column(
+                                        children: [
+
+                                          Text("Gucci Watch",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Chip(
+                                            label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                            shadowColor: Colors.blue,
+                                            backgroundColor: Colors.green,
+                                            elevation: 10,
+                                            autofocus: true,
+                                          ),
+                                        ],
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+
+                                    },
+                                    child: Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/w3.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    return showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext conext) {
+                                        return AlertDialog(
+                                          title: Text('Not in stock'),
+                                          content:
+                                          const Text('This item is no longer available'),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('Ok'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                      child: Column(
+                                        children: [
+
+                                          Text("Gucci Watch",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Chip(
+                                            label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                            shadowColor: Colors.blue,
+                                            backgroundColor: Colors.green,
+                                            elevation: 10,
+                                            autofocus: true,
+                                          ),
+                                        ],
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+
+                                    },
+                                    child: Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/m1.jpeg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    return showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext conext) {
+                                        return AlertDialog(
+                                          title: Text('Not in stock'),
+                                          content:
+                                          const Text('This item is no longer available'),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('Ok'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                      child: Column(
+                                        children: [
+
+                                          Text("Gucci Watch",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Chip(
+                                            label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                            shadowColor: Colors.blue,
+                                            backgroundColor: Colors.green,
+                                            elevation: 10,
+                                            autofocus: true,
+                                          ),
+                                        ],
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Card(
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+
+                                    },
+                                    child: Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        image: DecorationImage(
+                                            image: AssetImage('images/m2.jpg'),
+                                            fit: BoxFit.cover),
+                                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    return showDialog<void>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext conext) {
+                                        return AlertDialog(
+                                          title: Text('Not in stock'),
+                                          content:
+                                          const Text('This item is no longer available'),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('Ok'),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(50,20,50,20),
+                                      child: Column(
+                                        children: [
+
+                                          Text("Gucci Watch",
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Chip(
+                                            label: Text('Shop Now',style: TextStyle(color: Colors.white),),
+                                            shadowColor: Colors.blue,
+                                            backgroundColor: Colors.green,
+                                            elevation: 10,
+                                            autofocus: true,
+                                          ),
+                                        ],
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
